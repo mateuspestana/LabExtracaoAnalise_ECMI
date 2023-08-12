@@ -1,5 +1,6 @@
 # Script para demonstrar como obter dados do TikTok usando o TikTokAPI
 # Importando a biblioteca pandas e tiktokapipy
+# LEMBRANDO: rodar no console python -m playwright install
 from tiktokapipy.api import TikTokAPI
 import pandas as pd
 from tqdm import tqdm

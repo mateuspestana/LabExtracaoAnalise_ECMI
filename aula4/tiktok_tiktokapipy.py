@@ -9,7 +9,7 @@ pd.options.display.max_columns = 20
 
 # Definindo o desafio ou usuário que queremos baixar
 challenge = 'ukraine'
-user = 'felipeferaoficial'
+user = 'itsmatheuscosta'
 
 # Criando um objeto do tipo TikTokAPI
 n_videos = 50

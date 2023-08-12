@@ -1,0 +1,11 @@
+pandas
+numpy
+matplotlib
+snscrape
+tqdm
+tiktokapipy
+seaborn
+openpyxl
+jupyter
+scikit-learn
+wordcloud

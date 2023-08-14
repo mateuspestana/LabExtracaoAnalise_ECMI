@@ -13,14 +13,14 @@ challenge = 'ukraine'
 user = 'itsmatheuscosta'
 
 # Criando um objeto do tipo TikTokAPI
-n_videos = 50
+n_videos = 20
 
 # Criando uma lista vazia para armazenar os dados
 with TikTokAPI() as api:
     lista_videos = []
     # Obtendo os dados
-    tiktoks = api.challenge(challenge, video_limit=n_videos)
-    # tiktoks = api.user(user, video_limit=n_videos)
+    # tiktoks = api.challenge(challenge, video_limit=n_videos)
+    tiktoks = api.user(user, video_limit=n_videos)
     # Iterando sobre os vídeos
     for i, video in tqdm(enumerate(tiktoks.videos), total=n_videos):
         user = video.author.unique_id
@@ -35,8 +35,9 @@ with TikTokAPI() as api:
         date = video.create_time
         challenges = video.challenges
         lista_challenges = []
-        for challenge in challenges:
-            lista_challenges.append(challenge.title)
+        if challenges is not None:
+            for challenge in challenges:
+                lista_challenges.append(challenge.title)
         challenges = ', '.join(lista_challenges)
         duration = video.video.duration
         dados = {'user': user,
@@ -55,6 +56,7 @@ with TikTokAPI() as api:
 
 # Transformando a lista em um dataframe
 df = pd.DataFrame(lista_videos)
+df['date'] = df['date'].apply(lambda x: x.replace(tzinfo=None))
 
 # Salvando o dataframe como um arquivo em Excel
 df.to_excel(f"base_tiktok.xlsx", index=False)

@@ -36,7 +36,7 @@ for i, msg in enumerate(sn_channel.get_items()):
 
 # Transformando a lista em um dataframe
 msgs = pd.DataFrame(lista_msgs)
-msgs['date'] = msgs['date'].dt.tz_  localize(None)
+msgs['date'] = msgs['date'].dt.tz_localize(None)
 
 # Salvando o dataframe como um arquivo em Excel
 msgs.to_excel(f"{grupo_telegram}_telegram.xlsx", index=False)

@@ -4,7 +4,10 @@
 from tiktokapipy.api import TikTokAPI
 import pandas as pd
 from tqdm import tqdm
+import os
 
+os.system('pip install -U tiktokapipy')
+os.system('python -m playwright install')
 # Aumentando o número de colunas que o pandas mostra
 pd.options.display.max_columns = 20
 

@@ -9,3 +9,7 @@ openpyxl
 jupyter
 scikit-learn
 wordcloud
+beautifulsoup4
+lxml
+selenium
+webdriver-manager

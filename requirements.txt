@@ -13,3 +13,5 @@ beautifulsoup4
 lxml
 selenium
 webdriver-manager
+spotipy
+yfinance

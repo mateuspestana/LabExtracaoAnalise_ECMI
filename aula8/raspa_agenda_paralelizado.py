@@ -47,7 +47,7 @@ def scrape_url(url):
 
 agenda = []
 print('   >>> Iniciando o loop de raspagem da agenda...')
-with concurrent.futures.ThreadPoolExecutor(50) as executor:
+with concurrent.futures.ThreadPoolExecutor(100) as executor:
     results = list(tqdm(executor.map(scrape_url, urls), total=len(urls)))
 
     for result in results:
